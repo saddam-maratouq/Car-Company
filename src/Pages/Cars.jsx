@@ -15,9 +15,10 @@ console.log(Cars);
 
   
 
-    return (
+    return ( 
          <div>
-          <h2> Cars </h2> 
+          <h2> Cars </h2>  
+          <br /> 
           <div className="row">   
           {Cars.map(car => (  
 
@@ -27,7 +28,7 @@ console.log(Cars);
              
               </div>
           )) } 
-         </div>
+         </div> 
          </div>
  )
  }

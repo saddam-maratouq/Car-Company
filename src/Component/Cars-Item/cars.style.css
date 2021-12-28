@@ -1,4 +1,9 @@
 .card-body {
   position: relative; 
   right: 126px;
+} 
+
+.card { 
+  position: relative; 
+  left: 100px;
 }

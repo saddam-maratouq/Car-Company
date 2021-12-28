@@ -1,4 +1,8 @@
 import React from 'react'
+import { useDispatch , useSelector } from 'react-redux'
+import {bindActionCreators } from 'redux'
+import {actionCreator} from '../../redux/Action-index'
+
 import './cars.style.css' 
 
 
@@ -6,9 +10,17 @@ import './cars.style.css'
 
 
 
-const CarsItem = ({car}) => {
+const CarsItem = ({car}) => { 
+
+
+const dispatch = useDispatch() 
+
+const { AddCar , DeleteCar } = bindActionCreators( actionCreator  , dispatch)   
+
+    const addCarHanelr = () =>  AddCar(car) 
+
     return (
-        <center> 
+       
         <div> 
         <div className="card" > 
         
@@ -23,7 +35,7 @@ const CarsItem = ({car}) => {
          <a  href= {`car/${car.id}`}  className="btn btn-light"> Details </a>  
         
        
-        <button className="btn btn-primary"> 
+        <button onClick={addCarHanelr} className="btn btn-primary">  
                Add to Cart
            </button> 
     
@@ -35,7 +47,7 @@ const CarsItem = ({car}) => {
          </div> 
          
         </div> 
-        </center>
+       
                
     )
 }

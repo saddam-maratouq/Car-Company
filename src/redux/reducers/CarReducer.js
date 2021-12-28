@@ -12,8 +12,11 @@ const inithialState = {
 export const  CarReducer = (state=inithialState , action) => {
     switch (action.type) {
             case  'ADD_CAR' :  
-            return {...state , Cart : action.paylod }  
-           
+            return {
+                ...state ,
+            Cart : [...state.Cart , {...action.paylod.Car ,qty : 1 } ]       
+            }
+
             case  'DELETE_CAR' :   
             return {...state  }   
 
