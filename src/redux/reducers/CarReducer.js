@@ -3,7 +3,9 @@ import {CarData} from '../../car-Data/data'
 
 const inithialState = {
     Cars : CarData , 
-    Cart : []  
+    Cart : [] ,
+    
+    
 
 }
 
@@ -14,7 +16,7 @@ export const  CarReducer = (state=inithialState , action) => {
             case  'ADD_CAR' :  
             return {
                 ...state ,
-            Cart : [...state.Cart , {...action.paylod.Car , qty : 1 } ]       
+            Cart : [...state.Cart , {...action.paylod.Car , qty : 1 } ]           
             }
 
             case  'DELETE_CAR' :   
@@ -23,8 +25,15 @@ export const  CarReducer = (state=inithialState , action) => {
                 Cart :  state.Cart.filter(item => item.id !== action.paylod.id )  
             }   
 
+
+            case  'CHANGE_QUANTETY' :   
+            return  { 
+                ...state ,  
+                Cart :  state.Cart.filter(car => car.id === action.paylod.id  ? (car.qty = action.paylod.qty) : car.qty )   
+            }   
+
         default:
-            return state ;  
+            return state ;   
     }
 }
 

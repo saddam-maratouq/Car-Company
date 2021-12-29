@@ -26,7 +26,7 @@ console.log(Cars);
             
                   <CarsItem  car={car}  />
              
-              </div>
+              </div> 
           )) } 
          </div> 
          </div>

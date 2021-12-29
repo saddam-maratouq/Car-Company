@@ -1,9 +1,9 @@
-import React from 'react'  
-
+import React from 'react'
 import { useDispatch  } from 'react-redux'
 import {bindActionCreators } from 'redux'
 import {actionCreator} from '../../redux/Action-index'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons' 
 
 
 
@@ -12,19 +12,29 @@ import {actionCreator} from '../../redux/Action-index'
 
 const CartItem = ({item}) => { 
 
+   console.log(item.qty);   
+
+
     const dispatch = useDispatch() 
 
-    const { DeleteCar} = bindActionCreators(actionCreator ,dispatch) 
+    const { DeleteCar , ChangeQuantety} = bindActionCreators(actionCreator ,dispatch) 
     
     
     const CarId = item.id 
 
 
-    const deleteHandler = () =>   DeleteCar(CarId)
+    const deleteHandler = () =>   DeleteCar(CarId) 
    
        
-
-
+    const handelQuantety = (e) => {
+        const value =  Number(e.target.value) 
+        if (value < 0) {
+            return value
+         
+        } 
+        ChangeQuantety(CarId,value)  
+    }
+ 
     return (
        
         <div> 
@@ -38,11 +48,13 @@ const CartItem = ({item}) => {
         
          <h5> ${item.price} </h5>
         
+        <input type="Number"  min="1" value={item.qty}   onChange={handelQuantety}  />
         
-        
-       
+       <br /> <br />
+
         <button   onClick={deleteHandler} className="btn btn-danger"  >  
-               Delete
+             Remove <br /> 
+               <FontAwesomeIcon icon={faTrashAlt} >  </FontAwesomeIcon>
            </button> 
     
       
