@@ -1,0 +1,18 @@
+cart-icon   {
+    font-size: 24px; 
+   
+}
+
+#cart-icon span { 
+    font-size: 12px;
+    position: absolute;
+    top: 16px;
+    right: 5px;
+}
+
+.shoping-cart {
+    position: absolute;
+    top: 36px;
+    right: 20px; 
+    color: black;
+}

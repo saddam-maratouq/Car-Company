@@ -8,6 +8,7 @@ import CarDeatele from '../Pages/CarDeateles';
 import Cars from '../Pages/Cars';
 import Cart from '../Pages/Cart';
 import Home from '../Pages/Home';
+import CartIcon from './Cart-icon/CartIcon';
 
 
 
@@ -38,6 +39,8 @@ const Header = () => {
         </div>
       </nav> 
 
+      <CartIcon/> 
+
       <Routes>
     <Route path="/home" element={<Home/>} exact />
     <Route path="/Cars" element={<Cars/>}  exact/>
@@ -55,3 +58,6 @@ const Header = () => {
 }
 
 export default Header
+
+
+

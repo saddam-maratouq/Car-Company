@@ -1,6 +1,30 @@
-import React from 'react'
+import React from 'react'  
 
-const CartItem = ({item}) => {
+import { useDispatch  } from 'react-redux'
+import {bindActionCreators } from 'redux'
+import {actionCreator} from '../../redux/Action-index'
+
+
+
+
+
+
+
+const CartItem = ({item}) => { 
+
+    const dispatch = useDispatch() 
+
+    const { DeleteCar} = bindActionCreators(actionCreator ,dispatch) 
+    
+    
+    const CarId = item.id 
+
+
+    const deleteHandler = () =>   DeleteCar(CarId)
+   
+       
+
+
     return (
        
         <div> 
@@ -17,7 +41,7 @@ const CartItem = ({item}) => {
         
         
        
-        <button  className="btn btn-danger">  
+        <button   onClick={deleteHandler} className="btn btn-danger"  >  
                Delete
            </button> 
     

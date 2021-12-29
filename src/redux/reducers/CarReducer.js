@@ -14,14 +14,17 @@ export const  CarReducer = (state=inithialState , action) => {
             case  'ADD_CAR' :  
             return {
                 ...state ,
-            Cart : [...state.Cart , {...action.paylod.Car ,qty : 1 } ]       
+            Cart : [...state.Cart , {...action.paylod.Car , qty : 1 } ]       
             }
 
             case  'DELETE_CAR' :   
-            return {...state  }   
+            return  { 
+                ...state ,  
+                Cart :  state.Cart.filter(item => item.id !== action.paylod.id )  
+            }   
 
         default:
-            return state ; 
+            return state ;  
     }
 }
 

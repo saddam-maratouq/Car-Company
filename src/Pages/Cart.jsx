@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import CartItem from "../Component/cart-item/CartItem";
+import CartItem from "../Component/Cart-item/CartItem";
 
 const Cart = () => {
   const Cart = useSelector((state) => state.Cars.Cart);
