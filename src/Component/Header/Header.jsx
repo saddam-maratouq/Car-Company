@@ -4,20 +4,20 @@ import { Routes, Route ,  Link } from "react-router-dom";
 
 
 // pages 
-import CarDeatele from '../Pages/CarDeateles';
-import Cars from '../Pages/Cars';
-import Cart from '../Pages/Cart';
-import Home from '../Pages/Home';
-import CartIcon from './Cart-icon/CartIcon';
+import CarDeatele from '../../Pages/CarDeateles';
+import Cars from '../../Pages/Cars';
+import Cart from '../../Pages/Cart';
+import Home from '../../Pages/home/Home';
+import CartIcon from '../Cart-icon/CartIcon';
 
-
+import './Header.css'
 
 const Header = () => {
     return (
         <div className='continer'>  
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-        <img   src='../../puplic/Images/cars-blank-logo-disney-cars-logo-11563605327e5netu4npm.png'  width={'60px'} height={'60px'} /  > 
+        <img   src='https://www.car-brand-names.com/wp-content/uploads/2019/09/Proton-logo.png'  width={'60px'} height={'60px'} /  > 
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -36,7 +36,7 @@ const Header = () => {
             </ul>
            
           </div>
-        </div>
+        </div> 
       </nav> 
 
       <CartIcon/> 

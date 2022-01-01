@@ -12,7 +12,7 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 const CartItem = ({item}) => { 
 
-   console.log(item.qty);   
+//    console.log(item.qty);   
 
 
     const dispatch = useDispatch() 

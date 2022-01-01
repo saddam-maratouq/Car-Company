@@ -3,16 +3,32 @@ import { useSelector } from "react-redux";
 import CartItem from "../Component/Cart-item/CartItem";
 
 const Cart = () => {
-  const Cart = useSelector((state) => state.Cars.Cart);
-  console.log(Cart);
+  const Cart = useSelector((state) => state.Cars.Cart); 
+  // console.log(Cart);
 
+  
+
+  
+
+  
+  // another way to calc total 
+  
   const [total, SetTotal] = useState();
-
-  console.log(total);
-
+  
+  const handelTotal = () => {
+    let price =0 
+    Cart.forEach(el => {
+      price += el.price * el.qty 
+    });
+    SetTotal(price) 
+  }
+  
   useEffect(() => {
-    SetTotal(Cart.reduce((acc, item) => (acc + item.price) * item.qty, 0)); // some time change to number
-  }, [Cart]);
+    // SetTotal(Cart.reduce((acc, item) => (acc + item.price) * item.qty, 0)); // some time change to number 
+    handelTotal(); 
+  }, [Cart,total]); 
+
+
 
   return (
     <div>

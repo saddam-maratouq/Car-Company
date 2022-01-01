@@ -6,13 +6,13 @@ cart-icon   {
 #cart-icon span { 
     font-size: 12px;
     position: absolute;
-    top: 16px;
+    top: 15px;
     right: 5px;
 }
 
 .shoping-cart {
     position: absolute;
-    top: 36px;
+    top: 35px;
     right: 20px; 
     color: black;
 }
